@@ -112,3 +112,28 @@ class ShapeExplainPlotter:
     
     def __str__(self):
         return f"Shape Explainer for {self.out_model_name}"
+    
+
+
+
+
+if __name__ == "__main__":
+    model, X = get_model_x()
+    ex = ShapeExplainPlotter(
+        model=model,
+        training_set=X,
+        out_model_name="test",
+        path_to_save="./figs"
+    )
+
+    ex.compile(
+        show_plot=True,
+        save_plots=True,
+        plot_list=["waterfall","force","bar","bees","scatter"],
+        feature_name="shell weight",
+        scatter_color_by_feature = "shucked weight",
+        force_kwargs={"text_rotation": 10},
+        idx_row_focus=3,
+        bees_kwargs={"color_bar":True},
+        scatter_kwargs={"title" : "Test Scatter Plot"}
+    )
