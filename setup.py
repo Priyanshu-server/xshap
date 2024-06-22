@@ -5,10 +5,10 @@ with open('requirements.txt') as f:
     required_packages = f.read().splitlines()
 
 setup(
-    name='xshap',          # Replace with your package name
-    version='0.1.0',               # Semantic versioning
+    name='xshap',         
+    version='0.1.1',              
     packages=find_packages(),
-    install_requires=required_packages,  # Use the dependencies from requirements.txt
+    install_requires=required_packages, 
     author='xDoramming',
     author_email='priyanshuserver55@gmail.com',
     description='Package created as a wrapper for the original Shap package to simplify the learning process',
